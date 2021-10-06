@@ -1,0 +1,89 @@
+/*---------------------
+Base
+---------------------*/
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    color: #171717;
+    font-family: 'Noto Serif', 'Noto Serif JP', serif;
+}
+img{
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.section-wrapper{
+    padding: 100px 0 70px;
+    .section-inner{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .section-title{
+        font-size: 6rem;
+        font-weight: bold;
+        font-style: italic;
+        color: #282F35;
+        &::after{
+            content: "";
+            background-color: #282F35;
+            display: inline-block;
+            width: 200px;
+            height: 5px;
+            margin-left: 30px;
+            vertical-align: middle;
+        }
+    }
+}
+.link-btn{
+    font-weight: bold;
+    display: block;
+    background-color: #F7D43F;
+    text-align: center;
+    width: 235px;
+    line-height: 60px;
+    margin: 0 auto 70px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 6px #1B1310;
+    &:hover{
+        opacity: .7;
+        transition: .3s;
+    }
+}
+
+/*---------------------
+header
+---------------------*/
+
+
+/*---------------------
+fv
+---------------------*/
+
+
+/*---------------------
+concept
+---------------------*/
+
+
+/*---------------------
+works
+---------------------*/
+
+
+/*---------------------
+service
+---------------------*/
+
+
+
+/*---------------------
+contact
+---------------------*/
+
+
+
+/*---------------------
+footer
+---------------------*/
