@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*---------------------
 Base
 ---------------------*/
@@ -11,6 +12,7 @@ body {
   font-family: 'Noto Serif', 'Noto Serif JP', serif;
   letter-spacing: .05em;
   line-height: 1.667;
+  overflow-x: hidden;
 }
 
 img {
@@ -25,7 +27,7 @@ a:hover {
 }
 
 .section-wrapper {
-  padding: 100px 0 70px;
+  padding: 100px 4vw 70px;
 }
 
 .section-wrapper .section-inner {
@@ -76,6 +78,8 @@ header
 ---------------------*/
 .header {
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 2;
   color: #fff;
   padding: 19px 4vw;
@@ -88,7 +92,7 @@ header
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 1200px;
+  max-width: 1100px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -120,6 +124,15 @@ header
 
 .header .header-inner .burger-btn {
   display: none;
+}
+
+.fixed {
+  position: fixed;
+  background-color: #282F35;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100%;
+  padding: 30px 0;
 }
 
 /*---------------------
@@ -159,6 +172,14 @@ fv
   text-align: center;
 }
 
+.fv .main-copy .jp-copy .fv-br {
+  display: none;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
 /*---------------------
 concept
 ---------------------*/
@@ -192,6 +213,7 @@ concept
 
 .concept .section-inner .concept-content .concept-img-wrapper {
   max-width: 440px;
+  margin-left: 30px;
 }
 
 .concept .bottom-title {
@@ -215,6 +237,7 @@ works
 
 .works .section-inner .section-title {
   color: #fff;
+  text-align: right;
 }
 
 .works .section-inner .section-title::after {
@@ -253,6 +276,10 @@ works
 /*---------------------
 service
 ---------------------*/
+.service {
+  padding: 100px 0 40px;
+}
+
 .service .section-title {
   max-width: 1000px;
   margin: 0 auto;
@@ -275,6 +302,7 @@ service
   font-weight: bold;
   font-style: italic;
   color: #fff;
+  display: block;
 }
 
 .service .service-list a:hover {
@@ -357,4 +385,195 @@ footer
 /*--------------------
 import
 --------------------*/
+@media screen and (max-width: 768px) {
+  /*-------------------*/
+  /* base 
+    /*-------------------*/
+  .section-wrapper {
+    padding: 100px 4vw 40px;
+  }
+  .section-wrapper:nth-of-type(3) {
+    padding: 100px 0 40px;
+  }
+  .section-wrapper .section-title {
+    font-size: 3rem;
+    margin-bottom: 55px;
+  }
+  .section-wrapper .section-title::after {
+    width: 90px;
+  }
+  .noscroll {
+    overflow: hidden;
+  }
+  /*-------------------*/
+  /* header 
+    /*-------------------*/
+  .header {
+    padding: 30px 4vw;
+  }
+  .header .header-inner {
+    /*--------------------------*/
+    /* burger-btnをクリックしたとき
+            /*--------------------------*/
+  }
+  .header .header-inner .header-nav {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: #282F35;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .header .header-inner .header-nav .nav-list {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .header .header-inner .header-nav .nav-list .nav-item {
+    margin-bottom: 30px;
+    margin-left: 0;
+    text-align: center;
+  }
+  .header .header-inner .header-nav .nav-list .nav-item:last-of-type {
+    margin-bottom: 0;
+  }
+  .header .header-inner .burger-btn {
+    display: block;
+  }
+  .header .header-inner .burger-btn .bars .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #FFFDFD;
+  }
+  .header .header-inner .burger-btn .bars .bar-top {
+    margin-bottom: 10px;
+  }
+  .header .header-inner .burger-btn .bars .bar-bottom {
+    margin-top: 10px;
+  }
+  .header .header-inner .click .bars .bar-top {
+    -webkit-transform: rotate(45deg) translate(9px, 9px);
+            transform: rotate(45deg) translate(9px, 9px);
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .header .header-inner .click .bars .bar-mid {
+    opacity: 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .header .header-inner .click .bars .bar-bottom {
+    -webkit-transform: rotate(-45deg) translate(9px, -9px);
+            transform: rotate(-45deg) translate(9px, -9px);
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  /*-------------------*/
+  /* fv 
+    /*-------------------*/
+  .fv .main-copy {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+  .fv .main-copy .en-copy {
+    font-size: 3.7rem;
+    text-align: center;
+  }
+  .fv .main-copy .jp-copy {
+    font-size: 3rem;
+  }
+  .fv .main-copy .jp-copy .fv-br {
+    display: block;
+  }
+  /*-------------------*/
+  /* concept
+    /*-------------------*/
+  .concept .section-inner .concept-title {
+    margin-bottom: 34px;
+    font-size: 2rem;
+  }
+  .concept .section-inner .concept-title .sp-br {
+    display: block;
+  }
+  .concept .section-inner .concept-title .pc-br {
+    display: none;
+  }
+  .concept .section-inner .concept-content {
+    display: block;
+  }
+  .concept .section-inner .concept-content .concept-text {
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+  .concept .section-inner .concept-content .concept-img-wrapper {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .concept .section-inner .concept-content .concept-img-wrapper img {
+    width: 100%;
+  }
+  .concept .bottom-title {
+    font-size: 4rem;
+    margin-top: 40px;
+  }
+  /*-------------------*/
+  /* works 
+    /*-------------------*/
+  .works .section-inner .works-list {
+    display: block;
+  }
+  .works .section-inner .works-list .works-item {
+    max-width: 320px;
+    margin: 0 auto 30px;
+  }
+  .works .section-inner .works-list .works-item:last-of-type {
+    margin-bottom: 0;
+  }
+  .works .bottom-title {
+    font-size: 4rem;
+    margin-top: 40px;
+  }
+  /*-------------------*/
+  /* service
+    /*-------------------*/
+  .service .service-list {
+    display: block;
+  }
+  .service .service-list a {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .service .service-list a:last-of-type {
+    margin-bottom: 0;
+  }
+  .service .service-list a .service-item {
+    font-size: 2rem;
+  }
+  .service .bottom-title {
+    padding: 0 4vw;
+    font-size: 4rem;
+    margin-top: 40px;
+  }
+  /*-------------------*/
+  /* contact 
+    /*-------------------*/
+  .contact .section-inner .link-btn {
+    margin-top: 30px;
+  }
+  .contact .bottom-title {
+    margin-top: 40px;
+    font-size: 4rem;
+  }
+  /*-------------------*/
+  /* footer
+    /*-------------------*/
+}
 /*# sourceMappingURL=style.css.map */
